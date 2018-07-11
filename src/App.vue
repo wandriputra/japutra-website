@@ -2,29 +2,39 @@
   <div class="row">
     <div class="container">
       <Header></Header>
+      <title-page></title-page>
       <router-view/>
     </div>
   </div>
 </template>
 
 <script>
-import Header from '@/components/Header';
+import Header from '@/components/Includes/Header';
+import TitlePage from '@/components/Includes/TitlePage';
 
 export default {
   name: 'App',
   components: {
     Header,
+    TitlePage,
   },
+  computed: {
+    title() {
+      return this.$route.name;
+    },
+  }
 };
 </script>
 
-<style>
+<style lang="scss">
+  
 body {
   background: linear-gradient(to bottom right, #afc3dc, #315150);
   background-repeat: no-repeat;
   height: 100%;
   overflow-x: hidden;
   background-attachment: fixed;
+  font-family: 'trebuc', serif;
 }
 a {
   color: #fff;
@@ -121,4 +131,38 @@ a:hover {
     opacity: 0; 
   }
 }
+
+$font_path: '~@/assets/fonts/';
+
+// *********** //
+// SOURCE SANS //
+// ITALIC
+@font-face{
+  font-family    : 'trebuc';
+  src            : url($font_path +'Trebuchet-MS.eot'); /* IE9 Compat; Modes */
+  src            : url($font_path +'Trebuchet-MS.woff') format('woff'); /* Modern Browsers */
+  font-style     : normal;
+  font-weight    : 400;
+  text-rendering : optimizeLegibility;
+}
+// REGULAR
+@font-face{
+  font-family    : 'trajan';
+  src            : url($font_path +'trajanp0-webfont.eot'); /* IE9 Compat; Modes */
+  src            : url($font_path +'trajanp0-webfont.woff') format('woff'); /* Modern Browsers */
+  font-style     : normal;
+  font-weight    : 400;
+  text-rendering : optimizeLegibility;
+}
+// // SEMI BOLD
+// @font-face{
+//   font-family    : 'Source Sans Pro';
+//   src            : url($font_path +'SourceSansPro-Semibold.eot'); /* IE9 Compat; Modes */
+//   src            : url($font_path +'SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ 
+//                    url($font_path +'SourceSansPro-Semibold.woff2') format('woff2'), /* Modern Browsers */ 
+//                    url($font_path +'SourceSansPro-Semibold.woff') format('woff'); /* Modern Browsers */
+//   font-style     : normal;
+//   font-weight    : 600;
+//   text-rendering : optimizeLegibility;
+//}
 </style>

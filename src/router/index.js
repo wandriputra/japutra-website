@@ -1,12 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/Home'
-import About from '@/components/About'
-import Service from '@/components/Service'
-import Work from '@/components/Work'
-import WorkDetail from '@/components/WorkDetail'
-import Contact from '@/components/Contact'
-import Post from '@/components/Post'
+import Home from '@/components/Pages/Home'
+import About from '@/components/Pages/About'
+import Service from '@/components/Pages/Service'
+import Work from '@/components/Pages/Work'
+import WorkDetail from '@/components/Pages/WorkDetail'
+import Contact from '@/components/Pages/Contact'
 
 Vue.use(Router)
 
@@ -47,11 +46,6 @@ export default new Router({
       name: 'contact',
       component: Contact,
       meta: { isHome: false }
-    },
-    {
-      path: '/post/:post',
-      name: 'Post',
-      component: Post
     }
   ]
 })

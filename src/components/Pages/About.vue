@@ -1,5 +1,6 @@
 <template>
   <div class="pl-5 pr-5 pt-3 row title-text">
+    <title-page>ABOUT</title-page>
     <div class="col-md-12 text">
       <h4>JAPUTRA ARCHITECTURE</h4>
       <p> In 2009, a terrifying earthquake happened in padang city and destroyed many buildings and infrastructures,
@@ -31,15 +32,22 @@ With passion, hard work and consistency, PT.JAPUTRA has gained a lot of trust so
   import Stack from '@/assets/stack.png';
   import Check from '@/assets/check.png';
   import Gear from '@/assets/gear.png';
+  import TitlePage from '@/components/Includes/TitlePage';
 
   export default {
     name: 'about',
+    components: {
+      TitlePage,
+    },
     data() {
       return {
         stack: Stack,
         check: Check,
         gear: Gear,
       };
+    },
+    created() {
+      this.$eventBus.$emit('isHome', false);
     },
   };
 </script>

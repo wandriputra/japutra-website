@@ -1,5 +1,6 @@
 <template>
   <div class="pl-5 pr-5 pt-3 row title-text">
+    <title-page>SERVICE</title-page>
     <div class="offset-md-2 col-md-8 text row">
       <div class="col-md-12">
         <h4>BUILD YOUR DREAM</h4>
@@ -39,15 +40,22 @@
   import Stack from '@/assets/stack.png';
   import Check from '@/assets/check.png';
   import Gear from '@/assets/gear.png';
+  import TitlePage from '@/components/Includes/TitlePage';
 
   export default {
     name: 'about',
+    components: {
+      TitlePage,
+    },
     data() {
       return {
         stack: Stack,
         check: Check,
         gear: Gear,
       };
+    },
+    created() {
+      this.$eventBus.$emit('isHome', false)
     },
   };
 </script>

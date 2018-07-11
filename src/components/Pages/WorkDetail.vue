@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-3 pb-3 ml-2">
+  <div class="pb-3 ml-2">
     <div class="sk-folding-cube" v-if="loadData">
       <div class="sk-cube1 sk-cube"></div>
       <div class="sk-cube2 sk-cube"></div>
@@ -8,15 +8,12 @@
     </div>
     <div v-if="!loadData">
       <div class="col-md-12 row" >
-        <div class="col-md-3" v-for="post in posts" :key="post.id">
-          <router-link :to="{ path: 'work-detail', query: { id: post.id }}">
-            <img :src="post.image" alt="" width="100%" class="feature-image">
-            <span class="label">{{post.title}}</span>
-          </router-link>
+        <div class="col-md-12">
+          <router-link to="/work">Back</router-link>
         </div>
-      </div>
-      <div class="col-md-12 paginate-link text-center">
-        <a class="btn btn-primary-outline" v-for="i in totalPost" :key="i.id" @click.prevent="getData(i)">&oslash;</a>	
+        <div class="col-md-12" v-if="!loadData">
+          <p v-html="post.content.rendered"></p>
+        </div>
       </div>
     </div>
   </div>
@@ -27,29 +24,29 @@
 import axios from 'axios'
 
 export default {
-  name: 'work',
+  name: 'work-detail',
   data () {
     return {
-      posts: [],
+      post: [],
       totalPost: null,
-      loadData: true
+      loadData: true,
+      galleries: []
     }
   },
   methods: {
     getData (i) {
       this.posts = []
       this.loadData = true
-      axios.get(`${process.env.WP_API}/posts?categories=${process.env.CATEGORI_ID}&_embed&per_page=4&page=${i}`)
+      axios.get(`${process.env.WP_API}/posts/${i}?_embed`)
         .then(respone => {
-          const post = respone.data
-          this.totalPost = parseInt(respone.headers['x-wp-totalpages'])
-          post.map((data) => {
-            this.posts.push({
-              id: data.id,
-              title: data.title.rendered,
-              image: data._embedded['wp:featuredmedia'][0].source_url
+          this.post = respone.data
+          return respone.data._links['wp:attachment'][0].href
+        }).then((link) => {
+          axios.get(link)
+            .then((respone) => {
+              this.galleries = respone.data
             })
-          })
+        }).then(() => {
           this.loadData = false
         })
     },
@@ -57,8 +54,9 @@ export default {
       this.$router.push(`/post/${id}`)
     }
   },
-  created () {
-    this.getData(1)
+  mounted () {
+    this.getData(this.$route.query.id)
+    this.$eventBus.$emit('isHome', false);
   }
 }
 </script>

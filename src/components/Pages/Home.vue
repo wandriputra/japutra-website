@@ -48,12 +48,15 @@
         instagram: Instagram,
       };
     },
+    created() {
+      this.$eventBus.$emit('isHome', true);
+    },
   };
 </script>
 
 <style scoped>
 .title-text {
-  font-family: 'EB Garamond', serif;
+  font-family: 'trajan', serif;
   color: #fff;
   letter-spacing: 6px;
 }
