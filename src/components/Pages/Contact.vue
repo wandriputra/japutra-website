@@ -1,11 +1,12 @@
 <template>
-  <div class="pl-5 pr-5 pt-3 row title-text">
+  <div class="pl-5 pr-5 pt-3 row title-text" 
+    :style="{'background-image': `url(${indonesia})`, 'background-repeat': 'no-repeat', 'background-attachment': 'fixed', 'background-position': 'center'}">
     <title-page>CONTACTS</title-page>
     <div class="offset-md-3 col-md-8 text row">
       <div class="col-md-12 row pt-3 pt-5">
         <div class="col-md-10 row">
           <div class="col-md-3">
-            <img :src="stack" alt=""></div>
+            <img :src="mail" alt=""></div>
           <div class="col-md-9">
           <span class="bold-font">EMAIL</span>
           <p>japutraeknikindoperkasa@yahoo.com</p>
@@ -15,17 +16,17 @@
       <div class="col-md-12 row pt-3">
         <div class="col-md-10 row">
           <div class="col-md-3">
-            <img :src="stack" alt=""></div>
+            <img :src="phone" alt=""></div>
           <div class="col-md-9">
           <span class="bold-font">Phone</span>
-          <p>+62 751 39585 <br>+62 819 7519898</p>
+          <p>+62 751 39585 <br>+62 85272 132 193</p>
           </div>
         </div>
       </div>
       <div class="col-md-12 row pt-3">
         <div class="col-md-10 row">
           <div class="col-md-3">
-            <img :src="stack" alt=""></div>
+            <img :src="marker" alt=""></div>
           <div class="col-md-9">
           <span class="bold-font">Address</span>
           <p>Jl. Pemuda no 43i (Belakang Sari Musik) <br> Padang Barat, Padang-Indonesia</p>
@@ -37,9 +38,10 @@
 </template>
 
 <script>
-  import Stack from '@/assets/stack.png';
-  import Check from '@/assets/check.png';
-  import Gear from '@/assets/gear.png';
+  import Mail from '@/assets/mail.png';
+  import Phone from '@/assets/phone.png';
+  import Marker from '@/assets/marker.png';
+  import BgIndonesia from '@/assets/indonesia.png';
   import TitlePage from '@/components/Includes/TitlePage';
 
   export default {
@@ -49,13 +51,14 @@
     },
     data() {
       return {
-        stack: Stack,
-        check: Check,
-        gear: Gear,
+        mail: Mail,
+        phone: Phone,
+        marker: Marker,
+        indonesia: BgIndonesia,
       };
     },
     created() {
-      this.$eventBus.$emit('isHome', '1');
+      this.$eventBus.$emit('isHome', false);
     },
   };
 </script>
@@ -77,5 +80,8 @@ p {
 .bold-font {
   font-size: 20px;
   font-weight: 500;
+}
+img {
+  max-width: 80px;
 }
 </style>

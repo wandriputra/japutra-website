@@ -1,16 +1,25 @@
 <template>
   <div class="mt-5 mb-5">
-    <nav :class="['p-3 nav d-flex justify-content-between',{'home-nav': this.$router.currentRoute.path == '/'}]">
-      <router-link to='/' class="pl-2 pr-3">
+    <nav class="navbar navbar-expand-lg home-nav">
+      <router-link to='/' class="navbar-brand">
         <img :src="logo" alt="" width="30px">
       </router-link>
-      <router-link 
-        :to='menu.link' 
-        v-for="menu in menus" 
-        :key="menu.id" 
-        :class="menu.class">
-        {{menu.text}}
-      </router-link>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        Japutra.co.id <span class="glyphicon glyphicon-th"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active"
+            v-for="menu in menus" 
+            :key="menu.id">
+            <router-link 
+              :to='menu.link' 
+              :class="[menu.class, 'nav-item nav-link text-center']">
+              {{menu.text}}
+            </router-link>
+          </li>
+        </ul>
+      </div>
     </nav>
   </div>
 </template>
@@ -28,7 +37,7 @@
           { link: '/service', text: 'SERVICES', class: 'link-dot', isHome: false},
           { link: '/work', text: 'WORKS', class: 'link-dot', isHome: false},
           { link: '/japutras', text: 'JAPUTRAS', class: 'link-dot', isHome: false},
-          { link: '/contact', text: 'CONTACTS', class: 'mr-5', isHome: false},
+          { link: '/contact', text: 'CONTACTS', class: '', isHome: false},
         ],
         logo: Logo,
         isHome: false,
@@ -52,10 +61,16 @@ nav {
 }
 .home-nav {
   background-color: #66818c;
+  color: #fff !important;
 }
-  
-.link-dot::after {
-  content:"\2022";
-  padding: 50px;
+.navbar-toggler {
+  color: #fff;
 }
+@media (min-width: 992px) {
+  .link-dot::after {
+    content:"\2022";
+    padding: 50px;
+  }
+}
+
 </style>

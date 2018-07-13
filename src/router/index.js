@@ -6,6 +6,7 @@ import Service from '@/components/Pages/Service'
 import Work from '@/components/Pages/Work'
 import WorkDetail from '@/components/Pages/WorkDetail'
 import Contact from '@/components/Pages/Contact'
+import Japutras from '@/components/Pages/Japutras'
 
 Vue.use(Router)
 
@@ -45,6 +46,12 @@ export default new Router({
       path: '/contact',
       name: 'contact',
       component: Contact,
+      meta: { isHome: false }
+    },
+    {
+      path: '/japutras',
+      name: 'japutras',
+      component: Japutras,
       meta: { isHome: false }
     }
   ]

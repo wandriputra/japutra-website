@@ -3,7 +3,9 @@
     <div class="container">
       <Header></Header>
       <title-page></title-page>
-      <router-view/>
+      <transition name="fade" mode="out-in">
+          <router-view class="mb-5"/>
+      </transition>
     </div>
   </div>
 </template>
@@ -154,6 +156,20 @@ $font_path: '~@/assets/fonts/';
   font-weight    : 400;
   text-rendering : optimizeLegibility;
 }
+.fade-enter {
+    opacity: 0;
+}
+.fade-enter-active {
+    transition: opacity 0.5s ease;
+}
+.fade-leave {
+
+}
+.fade-leave-active {
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
 // // SEMI BOLD
 // @font-face{
 //   font-family    : 'Source Sans Pro';

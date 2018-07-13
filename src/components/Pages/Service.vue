@@ -6,28 +6,28 @@
         <h4>BUILD YOUR DREAM</h4>
       </div>
       <div class="col-md-12 row pt-3 pt-5">
-        <div class="col-md-4">
-          <img :src="stack" alt="">
+        <div class="col-md-4 text-center">
+          <img :src="architech" alt="">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 mt-3">
           <span class="bold-font">we turn ideas into work of art.</span>
           <p>For each project we establish relationships with partners who we know will help us create added value for your project</p>
         </div>
       </div>
       <div class="col-md-12 row pt-3">
-        <div class="col-md-4">
-          <img :src="stack" alt="">
+        <div class="col-md-4 text-center">
+          <img :src="retrofying" alt="">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 mt-3">
           <span class="bold-font">we make strong buildings.</span>
           <p>Steady construction require solid and robust foundation as well as prosperous relations are built only on faith and mutual respect</p>
         </div>
       </div>
       <div class="col-md-12 row pt-3">
-        <div class="col-md-4">
-          <img :src="stack" alt="">
+        <div class="col-md-4 text-center">
+          <img :src="interior" alt="">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 mt-3">
           <span class="bold-font">we satisfy our clients.</span>
           <p>We pay attention to all small details for the best results</p>
         </div>
@@ -37,9 +37,9 @@
 </template>
 
 <script>
-  import Stack from '@/assets/stack.png';
-  import Check from '@/assets/check.png';
-  import Gear from '@/assets/gear.png';
+  import Architech from '@/assets/about4.png';
+  import Retrofying from '@/assets/about3.png';
+  import Interior from '@/assets/about1.png';
   import TitlePage from '@/components/Includes/TitlePage';
 
   export default {
@@ -49,9 +49,9 @@
     },
     data() {
       return {
-        stack: Stack,
-        check: Check,
-        gear: Gear,
+        architech: Architech,
+        retrofying: Retrofying,
+        interior: Interior,
       };
     },
     created() {
@@ -78,5 +78,8 @@ p {
 .bold-font {
   font-size: 20px;
   font-weight: 500;
+}
+img {
+  max-width: 150px;
 }
 </style>

@@ -1,9 +1,9 @@
 <template>
-  <div class="pl-5 pr-5 pt-3 row title-text">
+  <div class="pl-5 pr-5 pt-3 pb-5 row title-text">
     <div class="col-md-12">
       <div class="float-right">
         <h4>JAPUTRA</h4>
-        <span>ARCHITECTURE</span>
+        <span>CONSTRUCTION</span>
       </div>
     </div>
     <div class="col-md-12 mt-3 row" style="padding-left:75px">
@@ -23,10 +23,10 @@
     </div>
     <div class="col-md-12">
       <div class="float-right">
-        <a href="http://facebook.com/japutra">
+        <a href="http://facebook.com/japutraconstruction">
           <img :src="facebook" alt="">
         </a>
-        <a href="http://instagram.com/japutra">
+        <a href="http://instagram.com/japutraconstruction">
           <img :src="instagram" alt="">
         </a>
       </div>
@@ -69,15 +69,19 @@ span {
 }
 .trapesium {
   height: 350px;
-  -webkit-transform: skew(-30deg);
-  -moz-transform: skew(-30deg);
-  -o-transform: skew(-30deg);
-  transform: skew(-30deg);
 }
-.normalize{
-  -webkit-transform: skew(30deg);
-  -moz-transform: skew(30deg);
-  -o-transform: skew(30deg);
-  transform: skew(30deg);
+@media (min-width: 768px) {
+  .trapesium {
+    -webkit-transform: skewX(-30deg);
+    -moz-transform: skewX(-30deg);
+    -o-transform: skewX(-30deg);
+    transform: skewX(-30deg);
+  }
+  .normalize{
+    -webkit-transform: skewX(0deg);
+    -moz-transform: skewX(0deg);
+    -o-transform: skewX(0deg);
+    transform: skewX(0deg);
+  }
 }
 </style>

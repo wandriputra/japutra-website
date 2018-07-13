@@ -2,7 +2,7 @@
   <div class="pl-5 pr-5 pt-3 row title-text">
     <title-page>ABOUT</title-page>
     <div class="col-md-12 text">
-      <h4>JAPUTRA ARCHITECTURE</h4>
+      <h4>JAPUTRA CONSTRUCTION</h4>
       <p> In 2009, a terrifying earthquake happened in padang city and destroyed many buildings and infrastructures,
 Fernando Japutra had the opportunity to work on a retrofit project at a biggest hotel in Padang at that time, Kyriad Bumiminang hotel.
 Ever since many opportunities keep coming and Fernando Japutra steady to establish PT.JAPUTRA in the same year.
