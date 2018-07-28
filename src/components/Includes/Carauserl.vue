@@ -1,18 +1,31 @@
 <template>
-  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div :class="[{active : index == 0}, 'item']" v-for="(gallery, index) in data" :key="gallery.id">
-        <img :src="gallery.media_details.sizes.large.source_url" alt="" style="width:100%;">
-      </div>
-    </div>
-  </div>
+  <carousel :per-page="1" mouse-drag="false">
+    <slide>
+      Slide 1 Content
+    </slide>
+    <slide>
+      Slide 2 Content
+    </slide>
+  </carousel>
 </template>
 
 <script>
+  import ImageDefault from '@/assets/indonesia.png';
+  // import { Carousel, Slide } from 'vue-carousel';
+
   export default {
     name: 'carousel',
     props: {
-      data: Object
+      link: String
+    },
+    // components: {
+    //   Carousel,
+    //   Slide
+    // },
+    data() {
+      return {
+        imageDefault: ImageDefault,
+      };
     }
   }
 </script>

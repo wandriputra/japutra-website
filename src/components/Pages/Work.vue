@@ -77,7 +77,9 @@ export default {
   text-align: right;
   width: 80%;
   color: #fff;
-  font-family: 'EB Garamond', serif;
+  font-family: 'arial', serif;
+  padding: 10px;
+  background-color: hsla(0, 0%, 43%, 0.562);
 }
 .feature-image {
   opacity: 0.5;

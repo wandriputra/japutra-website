@@ -5,7 +5,7 @@
         <img :src="logo" alt="" width="30px">
       </router-link>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        Japutra.co.id <span class="glyphicon glyphicon-th"></span>
+        Japutra.co.id <i class="fa fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
@@ -43,15 +43,15 @@
         isHome: false,
       };
     },
-    method: {
-      updateIsHome(val) {
-        this.isHome = val;
-        console.log(val);
-      },
-    },
-    mounted() {
-      this.$eventBus.$on('isHome', this.updateIsHome);
-    },
+    // method: {
+    //   updateIsHome(val) {
+    //     this.isHome = val;
+    //     console.log(val);
+    //   },
+    // },
+    // mounted() {
+    //   this.$eventBus.$on('isHome', this.updateIsHome);
+    // },
   };
 </script>
 
