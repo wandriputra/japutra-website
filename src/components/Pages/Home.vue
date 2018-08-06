@@ -27,7 +27,7 @@
     </div>
     <div class="col-md-12">
       <div class="float-right">
-        <a href="http://facebook.com/japutraconstruction">
+        <a href="https://www.facebook.com/Japutra-Construction-2112842912317407">
           <img :src="facebook" alt="">
         </a>
         <a href="http://instagram.com/japutraconstruction">
@@ -60,24 +60,24 @@ export default {
       images: [
         {
           img_t: Pict1T,
-          img: Pict1,
+          img: Pict1
         },
         {
           img_t: Pict2T,
-          img: Pict2,
+          img: Pict2
         },
         {
           img_t: Pict3T,
-          img: Pict3,
+          img: Pict3
         },
         {
           img_t: Pict4T,
-          img: Pict4,
+          img: Pict4
         },
         {
           img_t: Pict5T,
-          img: Pict5,
-        },
+          img: Pict5
+        }
       ],
       facebook: Facebook,
       instagram: Instagram
@@ -104,14 +104,15 @@ span {
 }
 .trapesium {
   height: 350px;
-  opacity: 0.8;
+  opacity: 1;
   -webkit-transform: skewX(-30deg);
   -moz-transform: skewX(-30deg);
   -o-transform: skewX(-30deg);
   transform: skewX(-30deg);
+  transition: opacity 0.4s;
 }
 .trapesium:hover {
-  opacity: 1;
+  opacity: 0.5;
 }
 .normalized {
   height: 300px;
@@ -129,7 +130,7 @@ span {
     display: none;
   }
   .tablet-img {
-    display:inherit;
+    display: inherit;
   }
 }
 </style>

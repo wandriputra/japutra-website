@@ -33,9 +33,9 @@
       return {
         menus: [
           { link: '/', text: 'HOME', class: 'link-dot', isHome: true},
-          { link: '/about', text: 'ABOUT', class: 'link-dot', isHome: false},
           { link: '/service', text: 'SERVICES', class: 'link-dot', isHome: false},
           { link: '/work', text: 'WORKS', class: 'link-dot', isHome: false},
+          { link: '/about', text: 'ABOUT', class: 'link-dot', isHome: false},
           { link: '/japutras', text: 'JAPUTRAS', class: 'link-dot', isHome: false},
           { link: '/contact', text: 'CONTACTS', class: '', isHome: false},
         ],

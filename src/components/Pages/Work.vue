@@ -9,15 +9,18 @@
     </div>
     <div v-if="!loadData">
       <div class="col-md-12 row" >
-        <div class="col-md-3" v-for="post in posts" :key="post.id">
+        <div class="col-md-3 works-image" v-for="post in posts" :key="post.id">
           <router-link :to="{ path: 'work-detail', query: { id: post.id }}">
             <img :src="post.image" alt="" width="100%" class="feature-image">
-            <span class="label">{{post.title}}</span>
+            <span class="label" v-html="post.title"></span>
           </router-link>
         </div>
       </div>
       <div class="col-md-12 paginate-link text-center">
-        <a class="btn btn-primary-outline" v-for="i in totalPost" :key="i.id" @click.prevent="getData(i)">&bull;</a>	
+        <a class="btn btn-primary-outline" v-for="i in totalPost" :key="i.id" @click.prevent="getData(i)">
+          <i class="fa fa-circle-o" v-if="i !== currentPage"></i>
+          <i class="fa fa-circle" v-if="i == currentPage"></i>
+        </a>	
       </div>
     </div>
   </div>
@@ -37,13 +40,15 @@ export default {
     return {
       posts: [],
       totalPost: null,
-      loadData: true
+      loadData: true,
+      currentPage: 1
     }
   },
   methods: {
     getData (i) {
       this.posts = []
       this.loadData = true
+      this.currentPage = i
       axios.get(`${process.env.WP_API}/posts?categories=${process.env.CATEGORI_ID}&_embed&per_page=4&page=${i}`)
         .then(respone => {
           const post = respone.data
@@ -73,22 +78,31 @@ export default {
 .label {
   position: absolute;
   bottom: 1px;
-  right: 25px;
+  right: 15px;
   text-align: right;
   width: 80%;
   color: #fff;
-  font-family: 'arial', serif;
+  font-family: "trajan", serif;
   padding: 10px;
   background-color: hsla(0, 0%, 43%, 0.562);
+  font-size: 12px;
+}
+.paginate-link {
+  color: #fff;
 }
 .feature-image {
-  opacity: 0.5;
+  opacity: 1;
   filter: alpha(opacity=50); /* For IE8 and earlier */
   -webkit-transition: opacity 0.5s; /* For Safari 3.1 to 6.0 */
   transition: opacity 0.5s;
 }
 .feature-image:hover {
-  opacity: 1;
+  opacity: 0.5;
   filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+@media (max-width: 576px) {
+  .works-image {
+    margin-bottom: 30px;
+  }
 }
 </style>

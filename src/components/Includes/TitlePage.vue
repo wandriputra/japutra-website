@@ -15,7 +15,7 @@
     color: #c9c9ca;
     letter-spacing: 50px;
     font-family: 'trajan', serif;
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
 @media (max-width: 768px) {
