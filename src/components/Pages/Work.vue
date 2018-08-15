@@ -49,7 +49,7 @@ export default {
       this.posts = []
       this.loadData = true
       this.currentPage = i
-      axios.get(`${process.env.WP_API}/posts?categories=${process.env.CATEGORI_ID}&_embed&per_page=4&page=${i}`)
+      axios.get(`${process.env.WP_API}/posts?categories=${process.env.CATEGORI_ID}&_embed&per_page=4&page=${i}&order=asc`)
         .then(respone => {
           const post = respone.data
           this.totalPost = parseInt(respone.headers['x-wp-totalpages'])

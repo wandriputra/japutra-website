@@ -9,7 +9,7 @@
             <img :src="mail" alt=""></div>
           <div class="col-md-9">
           <span class="bold-font">EMAIL</span>
-          <p>japutrateknikindoperkasa@yahoo.com <br> admin@japutra.com</p>
+          <p>japutrateknikindoperkasa@yahoo.com <br> admin@japutra.co.id</p>
           </div>
         </div>
       </div>

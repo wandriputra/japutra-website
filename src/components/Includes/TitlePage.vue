@@ -9,13 +9,13 @@
 @media (min-width: 768px) {
   .title-page {
     position: absolute;
-    bottom: 250px;
+    bottom: 100px;
     font-size: 6em;
     z-index: -1;
     color: #c9c9ca;
     letter-spacing: 50px;
     font-family: 'trajan', serif;
-    opacity: 0.4;
+    opacity: 0.2;
   }
 }
 @media (max-width: 768px) {

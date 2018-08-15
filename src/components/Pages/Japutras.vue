@@ -1,7 +1,10 @@
 <template>
   <div class="pl-5 pr-5 pt-3 row title-text">
     <title-page>JAPUTRAS</title-page>
-    <div class="h1 text-center">Japutras</div>
+    <div class="text-center col-md-12 pb-5">
+      <img :src="japutra" alt="" srcset="" class="image-japutra"> <br>
+      <span class="h1">The Japutras</span>
+    </div>
     <div class="text-white">
       <p>Fernando Japutra was educated and graduated with Bachelor in Civil Engineer from the Andalas University in 2007. </p>
       <p>In 2008, he joined the contractor company which specialized in process safety and risk management, seismic strengthening refurbishment and extension. He worked in commercial, residential and civil contracts starting out on the tools and become a project manager. He is very experienced in the management of commercial and civil projects.</p>
@@ -15,11 +18,17 @@
 
 <script>
   import TitlePage from '@/components/Includes/TitlePage';
+  import Japutras from '@/assets/japutras.jpeg';
 
   export default {
     name: 'about',
     components: {
       TitlePage,
+    },
+    data() {
+      return {
+        japutra: Japutras,
+      };
     },
     created() {
       this.$eventBus.$emit('isHome', '1');
@@ -39,6 +48,10 @@ h4 {
   font-size: 25px; 
   text-align: center;
 } 
+.image-japutra {
+  border-radius: 50%;
+  width: 300px;
+}
 p {
   font-size: 15px;
   text-align: justify;

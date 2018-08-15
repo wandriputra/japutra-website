@@ -32,6 +32,14 @@
           <p>We pay attention to all small details for the best results</p>
         </div>
       </div>
+      <div class="col-md-12 row pt-3">
+        <div class="col-md-4 text-center">
+          
+        </div>
+        <div class="col-md-8 text-right opacity-text">
+          <span class="h5-smaller">MORE THAN</span> <span class="text-gold h1-larger">10</span>  <br> <span class="text-gold h5-smaller">YEARS OF SUCCESSFUL WORK</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -81,5 +89,19 @@ p {
 }
 img {
   max-width: 150px;
+}
+.text-gold{
+  color: #a29562;
+}
+.opacity-text {
+  opacity: 0.6;
+  z-index: 99;
+}
+.h1-larger{
+  font-size: 8em;
+  line-height: 0px;
+}
+.h5-smaller {
+  font-size: 1.18rem;
 }
 </style>

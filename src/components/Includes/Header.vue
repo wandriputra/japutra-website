@@ -1,6 +1,6 @@
 <template>
   <div class="mt-5 mb-5">
-    <nav class="navbar navbar-expand-lg home-nav">
+    <nav :class="['navbar navbar-expand-lg home-nav']">
       <router-link to='/' class="navbar-brand">
         <img :src="logo" alt="" width="30px">
       </router-link>
@@ -9,12 +9,12 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
-          <li class="nav-item active"
+          <li class="nav-item nav-item-list"
             v-for="menu in menus" 
             :key="menu.id">
             <router-link 
               :to='menu.link' 
-              :class="[menu.class, 'nav-item nav-link text-center']">
+              :class="[menu.class, 'nav-item nav-link text-center header-text']">
               {{menu.text}}
             </router-link>
           </li>
@@ -66,11 +66,24 @@ nav {
 .navbar-toggler {
   color: #fff;
 }
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
+  .navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: inherit !important;
+    padding-left: inherit !important;
+  }
   .link-dot::after {
     content:"\2022";
-    padding: 50px;
+    padding: 30px;
   }
+  .link-dot::before {
+    padding: 30px;
+  }
+  .navbar-nav {
+    padding-left: 20px;
+  }
+}
+.header-text {
+  letter-spacing: 5px;
 }
 
 </style>
