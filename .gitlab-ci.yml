@@ -1,0 +1,25 @@
+image: trion/ng-cli-karma
+
+cache:
+  paths:
+    - node_modules/
+
+before_script:
+  - apt-get update -qq && apt-get install -y -qq sshpass
+
+deploy_production:
+  stage: deploy
+  environment: Production
+  only:
+    - staging
+  script:
+    - apt-get update -qq && apt-get install -y -qq sshpass
+    - rm ./package-lock.json
+    - npm install
+    - npm run build 
+    - npm run generate 
+    - cd dist/
+    - ls
+    - sshpass -V
+    - export SSHPASS=$USER_PASS 
+    - sshpass -e scp -o stricthostkeychecking=no -r . $USER@$HOST:/home/japutra/public_html
