@@ -4,6 +4,10 @@
   "description": "A vue wordpress project with wordpress as a backend",
   "author": "wandriputra <wandriputra@gmail.com>",
   "private": true,
+  "engines": {
+    "node": "15.3.0",
+    "npm": "7.0.14"
+  },
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",

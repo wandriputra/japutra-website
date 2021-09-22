@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/components/Pages/Home'
 import About from '@/components/Pages/About'
+import Index from '@/components/Pages/index'
 import Service from '@/components/Pages/Service'
 import Work from '@/components/Pages/Work'
 import WorkDetail from '@/components/Pages/WorkDetail'
@@ -14,6 +15,12 @@ export default new Router({
   routes: [
     {
       path: '/',
+      name: 'index',
+      component: Index,
+      meta: { isHome: false }
+    },
+    {
+      path: '/home',
       name: 'home',
       component: Home,
       meta: { isHome: true }

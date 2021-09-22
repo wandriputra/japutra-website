@@ -2,36 +2,42 @@
   <div class="pl-5 pr-5 pt-3 pb-5 row title-text">
     <div class="col-md-12">
       <div class="float-right">
-        <h4>JAPUTRA</h4>
-        <span>CONSTRUCTION</span>
+        <h4 class="text-bold">JAPUTRA</h4>
+        <span>archItecture</span>
       </div>
     </div>
-    <div class="col-md-12 mt-3 row tablet-img" style="padding-left:75px">
-      <div 
-        class="col-md-2 pl-2 m-2 trapesium" 
-        v-for="image in images" 
-        :key="image.id" 
-        :style="{'background-image': `url(${image.img_t})`, 'background-position': 'center'}">
-      </div>
+    <div class="col-md-12 mt-3 row tablet-img" style="padding-left: 75px">
+      <div
+        class="col-md-2 pl-2 m-2 trapesium"
+        v-for="image in images"
+        :key="image.id"
+        :style="{
+          'background-image': `url(${image.img_t})`,
+          'background-position': 'center',
+        }"
+      ></div>
     </div>
-    <div class="col-md-12 mt-3 row phone-img" style="padding-left:55px">
-      <div 
-        class="col-md-12 mb-3 normalized" 
-        v-for="image in images" 
-        :key="image.id" 
-        :style="{'background-image': `url(${image.img})`, 'background-position': 'center'}">
-      </div>
+    <div class="col-md-12 mt-3 row phone-img" style="padding-left: 55px">
+      <div
+        class="col-md-12 mb-3 normalized"
+        v-for="image in images"
+        :key="image.id"
+        :style="{
+          'background-image': `url(${image.img})`,
+          'background-position': 'center',
+        }"
+      ></div>
     </div>
-    <div class="col-md-12">
-      DESIGN & BUILD
-    </div>
-    <div class="col-md-12">
+    <div class="col-md-12">DESIGN & BUILD</div>
+    <div class="col-md-12 pt-10">
       <div class="float-right">
-        <a href="https://www.facebook.com/Japutra-Construction-2112842912317407">
-          <img :src="facebook" alt="">
+        <a
+          href="https://www.facebook.com/Japutra-Construction-2112842912317407"
+        >
+          <img :src="facebook" alt="" />
         </a>
         <a href="http://instagram.com/japutraconstruction">
-          <img :src="instagram" alt="">
+          <img :src="instagram" alt="" />
         </a>
       </div>
     </div>
@@ -60,32 +66,32 @@ export default {
       images: [
         {
           img_t: Pict1T,
-          img: Pict1
+          img: Pict1,
         },
         {
           img_t: Pict2T,
-          img: Pict2
+          img: Pict2,
         },
         {
           img_t: Pict3T,
-          img: Pict3
+          img: Pict3,
         },
         {
           img_t: Pict4T,
-          img: Pict4
+          img: Pict4,
         },
         {
           img_t: Pict5T,
-          img: Pict5
-        }
+          img: Pict5,
+        },
       ],
       facebook: Facebook,
-      instagram: Instagram
+      instagram: Instagram,
     };
   },
   created() {
     this.$eventBus.$emit("isHome", true);
-  }
+  },
 };
 </script>
 
