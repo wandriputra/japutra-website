@@ -28,7 +28,7 @@
         }"
       ></div>
     </div>
-    <div class="col-md-12">DESIGN & BUILD</div>
+    <div class="col-md-12 text-bold">DESIGN & BUILD</div>
     <div class="col-md-12 pt-10">
       <div class="float-right">
         <a
@@ -100,6 +100,9 @@ export default {
   font-family: "trajan", serif;
   color: #fff;
   letter-spacing: 6px;
+}
+.text-bold {
+  font-family: "trajan-bold", serif;
 }
 h4 {
   letter-spacing: 5px;

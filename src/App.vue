@@ -165,6 +165,13 @@ $font_path: "~@/assets/fonts/";
   font-weight: 400;
   text-rendering: optimizeLegibility;
 }
+@font-face {
+  font-family: "trajan-bold";
+  src: url($font_path + "trajanpro-bold.woff") format("woff"); /* Modern Browsers */
+  font-style: normal;
+  font-weight: 800;
+  text-rendering: optimizeLegibility;
+}
 .fade-enter {
   opacity: 0;
 }
