@@ -1,7 +1,4 @@
-runtime: python27
-api_version: 1
-threadsafe: true
-
+runtime: nodejs16
 handlers:
   # Serve all static files with urls ending with a file extension
 - url: /(.*\..+)$ 
