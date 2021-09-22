@@ -3,7 +3,7 @@
     <div class="col-md-12">
       <div class="float-right">
         <h4 class="text-bold">JAPUTRA</h4>
-        <span>archItecture</span>
+        <span>architecture</span>
       </div>
     </div>
     <div class="col-md-12 mt-3 row tablet-img" style="padding-left: 75px">
